@@ -24,14 +24,16 @@
  </thead>
  <tbody>
  @foreach($student as $s)
+ 
  <tr>
  <td>{{ $s->nim }}</td>
  <td>{{ $s->name }}</td>
  <td>{{ $s->class }}</td>
+ <td><a href="/students/{{$s->id}}/edit" class="btn btnwarning">Edit</a></td>
  </tr>
-
  @endforeach
  </tbody>
+ 
  </table>
  <a href="/students/create" class="btn btn-primary">Add Data</a> 
 <br><br>
