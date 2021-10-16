@@ -40,6 +40,12 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
+                            @if (Route::has('home'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
+                                </li>
+                            @endif
+
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -49,6 +55,12 @@
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('students.index'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('students.index') }}">{{ __('Students') }}</a>
                                 </li>
                             @endif
                         @else
